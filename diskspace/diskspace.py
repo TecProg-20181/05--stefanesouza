@@ -8,7 +8,6 @@ import os
 import subprocess
 import re
 
-
 # ==== Arguments ====
 
 parser = argparse.ArgumentParser(
@@ -54,6 +53,7 @@ def bytes_to_readable(blocks):
 
 def print_tree(file_tree, file_tree_node, path, largest_size, total_size,
                depth=0):
+
     percentage = int(file_tree_node['size'] / float(total_size) * 100)
 
     if percentage < args.hide:
@@ -145,6 +145,7 @@ def main():
                         order=(args.order == 'desc'))
     else:
         show_space_list(args.directory, order=(args.order == 'desc'))
+
 
 if __name__ == '__main__':
     main()
